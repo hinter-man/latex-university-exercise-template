@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage{pdfpages}
+\usepackage[]{parskip}
+\usepackage{tabularx}
+\usepackage{mathabx}
+\usepackage{hyperref}
+
+\usepackage{listings}
+  \lstdefinelanguage{diff}{ % language for git diff
+    frame=tblr,
+    breaklines=true,
+    basicstyle=\ttfamily\small,
+    morecomment=[f][\color{diffstart}]{@@},
+    morecomment=[f][\color{diffincl}]{+\ },
+    morecomment=[f][\color{diffrem}]{-\ },
+  }
+
+
+\title{Insert title here} % title of the page
+\author{Manuel Hinterreiter\\S1610307018} 
+
+\begin{document}
+\maketitle
+%\newpage
+\tableofcontents
+\section{Section One}
+\section{Section Two}
+
+
+\end{document}
