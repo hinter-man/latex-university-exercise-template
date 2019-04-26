@@ -1,36 +1,105 @@
 \documentclass[12pt]{article}
-\usepackage{cmbright}
-\usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage{cmbright}
+\usepackage[utf8]{inputenc}
 \usepackage{fullpage}
+\usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \graphicspath{ {./img/} }
+\usepackage{color}
 \usepackage{pdfpages}
 \usepackage[]{parskip}
 \usepackage{tabularx}
 \usepackage{mathabx}
 \usepackage{hyperref}
 
+\usepackage[svgnames]{xcolor}
+  \definecolor{diffstart}{named}{Grey}
+  \definecolor{diffincl}{named}{Green}
+  \definecolor{diffrem}{named}{OrangeRed}
+  \definecolor{keywordstyle}{named}{Blue}
+  \definecolor{numberstyle}{named}{Black}
+  \definecolor{stringstyle}{named}{Red}
+  \definecolor{commentstyle}{named}{Green}
+  
+
 \usepackage{listings}
-  \lstdefinelanguage{diff}{ % language for git diff
-    frame=tblr,
-    breaklines=true,
-    basicstyle=\ttfamily\small,
-    morecomment=[f][\color{diffstart}]{@@},
-    morecomment=[f][\color{diffincl}]{+\ },
-    morecomment=[f][\color{diffrem}]{-\ },
-  }
+% language to show differences
+\lstdefinelanguage{diff}{
+  frame=tblr,
+  breaklines=true,
+  basicstyle=\ttfamily\small,
+  morecomment=[f][\color{diffstart}]{@@},
+  morecomment=[f][\color{diffincl}]{+\ },
+  morecomment=[f][\color{diffrem}]{-\ },
+}
+
+\lstset{
+  language=C++, %Java, ...
+  commentstyle=\color{commentstyle},
+  keywordstyle=\color{keywordstyle},
+  numberstyle=\tiny\color{numberstyle},
+  stringstyle=\color{stringstyle},
+  basicstyle=\footnotesize\ttfamily,
+  breakatwhitespace=false,         
+  breaklines=true,                                     
+  keepspaces=true,                 
+  numbers=left,                                      
+  showspaces=false,                
+  showstringspaces=false,
+  showtabs=false,
+  frame=tblr,
+  caption=\lstname,
+  frame=single
+}
 
 
-\title{Insert title here} % title of the page
+\title{Titel} % title of the page
 \author{Manuel Hinterreiter\\S1610307018} 
 
 \begin{document}
+%\includepdf[pages=-]{../yourpdf.pdf}
 \maketitle
-%\newpage
-\tableofcontents
-\section{Section One}
-\section{Section Two}
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{trex}
+\end{figure}
+
+\tableofcontents
+\newpage
+\section{Abschnitt eins}
+\begin{lstlisting}[caption=Class1.cs]
+public Class1()
+{
+    ...
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=diff, caption=Diff.cs]
+@@ -1,3 +1,5 @@
+language=diff
+-       hilfreich um Unterschiede zwischen zwei Files anzuzeigen
+-       am besten auf Kommandozeilenebene
+\ No newline at end of file
++       hilfreich um Unterschiede zwischen 2 Files anzuzeigen
++       am besten auf Kommandozeilenebene
++       git diff file1 file2
++       kopieren und einfuegen
+\end{lstlisting}
+
+\section{Abschnitt zwei}
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|p{2.5cm}||p{4cm}|p{4cm}|}
+    \hline
+     \textbf{Spalte 1} & \textbf{Spalte 2} & \textbf{Spalte 3} \\
+     \hline
+     &&\\
+     \hline
+   \end{tabular}
+   \caption{Beschreibung}
+   \label{tab:table1}
+\end{table}
 
 \end{document}
